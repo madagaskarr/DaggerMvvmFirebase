@@ -1,4 +1,4 @@
-package com.grk.daggermvvmfirebase.di
+package com.grk.daggermvvmfirebase.di.viewModelFactory
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

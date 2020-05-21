@@ -1,9 +1,10 @@
-package com.grk.daggermvvmfirebase.di
+package com.grk.daggermvvmfirebase.di.modules
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.grk.daggermvvmfirebase.MainActivityViewModel
-import com.grk.daggermvvmfirebase.MyViewModelProviderFactory
+import com.grk.daggermvvmfirebase.viewModels.MainActivityViewModel
+import com.grk.daggermvvmfirebase.di.viewModelFactory.MyViewModelProviderFactory
+import com.grk.daggermvvmfirebase.di.viewModelFactory.ViewModelKey
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

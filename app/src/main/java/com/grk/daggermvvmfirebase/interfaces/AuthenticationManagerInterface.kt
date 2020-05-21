@@ -1,4 +1,4 @@
-package com.grk.daggermvvmfirebase
+package com.grk.daggermvvmfirebase.interfaces
 
 import android.content.Context
 import android.content.Intent

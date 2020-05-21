@@ -1,9 +1,10 @@
-package com.grk.daggermvvmfirebase
+package com.grk.daggermvvmfirebase.viewModels
 
 import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseUser
+import com.grk.daggermvvmfirebase.managers.AuthenticationManager
 import javax.inject.Inject
 
 class MainActivityViewModel @Inject constructor(private var authenticationManager: AuthenticationManager) : ViewModel() {

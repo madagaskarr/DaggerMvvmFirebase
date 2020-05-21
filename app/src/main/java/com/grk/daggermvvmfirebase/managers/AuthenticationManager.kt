@@ -1,15 +1,15 @@
-package com.grk.daggermvvmfirebase
+package com.grk.daggermvvmfirebase.managers
 
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.grk.daggermvvmfirebase.interfaces.AuthenticationManagerInterface
 import javax.inject.Inject
 
-class AuthenticationManager @Inject constructor(private val firebaseAuth: FirebaseAuth, private val context: Context): AuthenticationManagerInterface {
+class AuthenticationManager @Inject constructor(private val firebaseAuth: FirebaseAuth, private val context: Context):
+    AuthenticationManagerInterface {
 
     override fun isUserAuthenticated(): Boolean {
         var isAuthenticated = false

@@ -1,4 +1,4 @@
-package com.grk.daggermvvmfirebase
+package com.grk.daggermvvmfirebase.di.viewModelFactory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

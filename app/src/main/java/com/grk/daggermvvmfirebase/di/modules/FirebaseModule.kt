@@ -1,4 +1,4 @@
-package com.grk.daggermvvmfirebase.di
+package com.grk.daggermvvmfirebase.di.modules
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

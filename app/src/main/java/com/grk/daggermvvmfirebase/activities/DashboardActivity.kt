@@ -1,8 +1,10 @@
-package com.grk.daggermvvmfirebase
+package com.grk.daggermvvmfirebase.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
+import com.grk.daggermvvmfirebase.MyApplication
+import com.grk.daggermvvmfirebase.R
+import com.grk.daggermvvmfirebase.managers.AuthenticationManager
 import javax.inject.Inject
 
 class DashboardActivity : AppCompatActivity() {
