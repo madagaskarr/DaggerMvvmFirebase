@@ -30,11 +30,18 @@ class AuthenticationManager @Inject constructor(private val firebaseAuth: Fireba
         }
     }
 
-    override fun signInWithEmailAndPassword(email: String, password: String) {
-        firebaseAuth.signInWithEmailAndPassword(email, password)
+    override fun signInWithEmailAndPassword(email: String, password: String, context: Context, intent: Intent) {
+        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener { result ->
+            if (result.isSuccessful) {
+                Toast.makeText(context, "Success", Toast.LENGTH_LONG).show()
+                context.startActivity(intent)
+            } else {
+                Toast.makeText(context, "${result.exception}", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
-    override fun getCurrentUserId(): FirebaseUser? {
+    override fun getCurrentUser(): FirebaseUser? {
         return firebaseAuth.currentUser
     }
 

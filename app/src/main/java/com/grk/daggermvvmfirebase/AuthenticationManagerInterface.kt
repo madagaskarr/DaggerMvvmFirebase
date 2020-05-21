@@ -1,5 +1,6 @@
 package com.grk.daggermvvmfirebase
 
+import android.content.Context
 import android.content.Intent
 import com.google.firebase.auth.FirebaseUser
 
@@ -9,9 +10,9 @@ interface AuthenticationManagerInterface {
 
     fun createUserWithEmailAndPassword(email: String, password: String)
 
-    fun signInWithEmailAndPassword(email: String, password: String)
+    fun signInWithEmailAndPassword(email: String, password: String, context: Context, intent: Intent)
 
-    fun getCurrentUserId(): FirebaseUser?
+    fun getCurrentUser(): FirebaseUser?
 
     fun signTheUserOut()
 }
