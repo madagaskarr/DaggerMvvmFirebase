@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "224501760410",
+    "firebase_url": "https://daggermvvmfirebase.firebaseio.com",
+    "project_id": "daggermvvmfirebase",
+    "storage_bucket": "daggermvvmfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224501760410:android:b8f4d10bbcf17a0669fa23",
+        "android_client_info": {
+          "package_name": "com.grk.daggermvvmfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224501760410-kkemh5p9tovruab6109h3sa5gcn8dfm5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoTITjZmewfa49XenZXW4rJiKyxrv6pFw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224501760410-kkemh5p9tovruab6109h3sa5gcn8dfm5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
