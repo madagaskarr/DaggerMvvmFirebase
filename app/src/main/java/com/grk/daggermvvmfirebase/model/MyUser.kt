@@ -10,10 +10,10 @@ data class MyUser(var id: String,
                   var createdRecipes: MutableList<Recipe>)
 
 @IgnoreExtraProperties
-data class Recipe(var id: String,
-                  var title: String,
-                  val isFavourite: Boolean,
-                  var ingredients: MutableList<Ingredient>)
+data class Recipe(var id: String = "",
+                  var title: String = "",
+                  val isFavourite: Boolean = false,
+                  var ingredients: MutableList<Ingredient> = mutableListOf())
 
 @IgnoreExtraProperties
-data class Ingredient(var id: String, var title: String)
+data class Ingredient(var id: String = "", var title: String = "")

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.grk.daggermvvmfirebase.MyApplication
 import com.grk.daggermvvmfirebase.R
@@ -32,6 +34,10 @@ class DashboardActivity : AppCompatActivity() {
 
         dashboardActivityViewModel = viewModelFactory.create(DashboardActivityViewModel::class.java)
 
+        dashboardActivityViewModel.getRecipesLiveData().observe(this, Observer { recipe ->
+            Toast.makeText(this, recipe.get(0).title, Toast.LENGTH_LONG).show()
+        })
+
     }
 
     fun addNewUser(view: View) {
@@ -45,6 +51,11 @@ class DashboardActivity : AppCompatActivity() {
         )
 
         dashboardActivityViewModel.addNewUser(tigran)
+    }
+
+    fun getAllRecipes(view: View) {
+        val allRecipes = dashboardActivityViewModel.getAllRecipes()
+        print(allRecipes)
     }
 
     fun addRecipe(view: View) {

@@ -1,5 +1,6 @@
 package com.grk.daggermvvmfirebase.viewModels
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.grk.daggermvvmfirebase.managers.DatabaseManager
 import com.grk.daggermvvmfirebase.model.MyUser
@@ -14,5 +15,13 @@ class DashboardActivityViewModel@Inject constructor(private var databaseManager:
 
     fun addNewRecipe(recipe: Recipe) {
         databaseManager.addRecipeToDatabase(recipe)
+    }
+
+    fun getAllRecipes(){
+        databaseManager.getAllRecipes()
+    }
+
+    fun getRecipesLiveData(): MutableLiveData<MutableList<Recipe>> {
+        return databaseManager.getAllRecipesLiveData()
     }
 }
