@@ -14,8 +14,21 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
         android:onClick="addNewUser"
-        android:text="Button"
+        android:text="Add User"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:onClick="addRecipe"
+        android:text="Add Recipe"
+        app:layout_constraintBottom_toTopOf="@+id/add_user_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

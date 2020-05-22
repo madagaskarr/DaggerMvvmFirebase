@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.grk.daggermvvmfirebase.MyApplication
 import com.grk.daggermvvmfirebase.R
 import com.grk.daggermvvmfirebase.managers.AuthenticationManager
+import com.grk.daggermvvmfirebase.model.Ingredient
 import com.grk.daggermvvmfirebase.model.MyUser
 import com.grk.daggermvvmfirebase.model.Recipe
 import com.grk.daggermvvmfirebase.viewModels.DashboardActivityViewModel
@@ -23,8 +24,6 @@ class DashboardActivity : AppCompatActivity() {
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var dashboardActivityViewModel: DashboardActivityViewModel
-    private lateinit var emailEditText: EditText
-    private lateinit var passwordEditText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         (application as MyApplication).applicationComponent.injectDashboardActivity(this)
@@ -36,7 +35,21 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     fun addNewUser(view: View) {
-        dashboardActivityViewModel.addNewUser(MyUser(authenticationManager.getCurrentUser()!!.uid, "TIgran", Recipe("sfsdf","sdfdsfsdfs")))
+
+        var tigran = MyUser(
+            id = authenticationManager.getCurrentUser()!!.uid,
+            name = "Tigran",
+            imageUrl = "https://firebase.google.com/docs/firestore/query-data/get-data",
+            favouriteRecipes = mutableListOf(Recipe("342573456347583", "Kebab in Tsatsiki", true, mutableListOf(Ingredient("572573456347583","Beef"), Ingredient("572473456347583","Matsoon")))),
+            createdRecipes = mutableListOf(Recipe("342573456347583", "Kebab in Tsatsiki", true, mutableListOf(Ingredient("572573456347583","Beef"), Ingredient("572473456347583","Matsoon"))))
+        )
+
+        dashboardActivityViewModel.addNewUser(tigran)
+    }
+
+    fun addRecipe(view: View) {
+        var recipe = Recipe("342573456347583", "Kebab in Tsatsiki", true, mutableListOf(Ingredient("572573456347583","Beef"), Ingredient("572473456347583","Matsoon")))
+        dashboardActivityViewModel.addNewRecipe(recipe)
     }
 
     override fun onBackPressed() {
