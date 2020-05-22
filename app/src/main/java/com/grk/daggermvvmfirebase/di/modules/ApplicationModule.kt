@@ -5,8 +5,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.grk.daggermvvmfirebase.managers.AuthenticationManager
 import com.grk.daggermvvmfirebase.R
+import com.grk.daggermvvmfirebase.managers.DatabaseManager
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -31,9 +33,12 @@ class ApplicationModule {
     @Singleton
     @Provides
     fun provideAuthenticationManager(firebaseAuth: FirebaseAuth, context: Application): AuthenticationManager {
-        return AuthenticationManager(
-            firebaseAuth = firebaseAuth,
-            context = context
-        )
+        return AuthenticationManager(firebaseAuth = firebaseAuth, context = context)
+    }
+
+    @Singleton
+    @Provides
+    fun provideDatabaseManager(firestore: FirebaseFirestore, context: Application): DatabaseManager {
+        return DatabaseManager(firestore = firestore, context = context)
     }
 }

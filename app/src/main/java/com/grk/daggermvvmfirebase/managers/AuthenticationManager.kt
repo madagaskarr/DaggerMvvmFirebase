@@ -20,10 +20,11 @@ class AuthenticationManager @Inject constructor(private val firebaseAuth: Fireba
         return isAuthenticated
     }
 
-    override fun createUserWithEmailAndPassword(email: String, password: String) {
+    override fun createUserWithEmailAndPassword(email: String, password: String, context: Context, intent: Intent) {
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { result ->
             if (result.isSuccessful) {
                 Toast.makeText(context, "Success", Toast.LENGTH_LONG).show()
+                context.startActivity(intent)
             } else {
                 Toast.makeText(context, "${result.exception}", Toast.LENGTH_LONG).show()
             }

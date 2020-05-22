@@ -13,8 +13,8 @@ class MainActivityViewModel @Inject constructor(private var authenticationManage
         return authenticationManager.isUserAuthenticated()
     }
 
-    fun createUserWithEmailAndPassword(email: String, password: String) {
-        authenticationManager.createUserWithEmailAndPassword(email, password)
+    fun createUserWithEmailAndPassword(email: String, password: String, context: Context, intent: Intent) {
+        authenticationManager.createUserWithEmailAndPassword(email, password, context, intent)
     }
 
     fun signInWithEmailAndPassword(email: String, password: String, context: Context, intent: Intent) {

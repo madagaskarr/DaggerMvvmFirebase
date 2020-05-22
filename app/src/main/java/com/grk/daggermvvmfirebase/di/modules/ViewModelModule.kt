@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.grk.daggermvvmfirebase.viewModels.MainActivityViewModel
 import com.grk.daggermvvmfirebase.di.viewModelFactory.MyViewModelProviderFactory
 import com.grk.daggermvvmfirebase.di.viewModelFactory.ViewModelKey
+import com.grk.daggermvvmfirebase.viewModels.DashboardActivityViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -18,6 +19,14 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(MainActivityViewModel::class)
     abstract fun bindMainActivityViewModel(mainActivityViewModel: MainActivityViewModel): ViewModel
+
+    @Binds
+    @Singleton
+    @IntoMap
+    @ViewModelKey(DashboardActivityViewModel::class)
+    abstract fun bindDashboardActivityViewModel(dashboardActivityViewModel: DashboardActivityViewModel): ViewModel
+
+
 
     @Binds
     @Singleton

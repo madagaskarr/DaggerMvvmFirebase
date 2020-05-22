@@ -8,7 +8,7 @@ interface AuthenticationManagerInterface {
 
     fun isUserAuthenticated(): Boolean
 
-    fun createUserWithEmailAndPassword(email: String, password: String)
+    fun createUserWithEmailAndPassword(email: String, password: String, context: Context, intent: Intent)
 
     fun signInWithEmailAndPassword(email: String, password: String, context: Context, intent: Intent)
 

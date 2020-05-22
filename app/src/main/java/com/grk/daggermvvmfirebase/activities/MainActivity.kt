@@ -37,6 +37,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun registerNewUser(view: View) {
-        mainActivityViewModel.createUserWithEmailAndPassword(emailEditText.text.toString(), passwordEditText.text.toString())
+        mainActivityViewModel.createUserWithEmailAndPassword(emailEditText.text.toString(), passwordEditText.text.toString(), this, Intent(this, DashboardActivity::class.java))
     }
 }
